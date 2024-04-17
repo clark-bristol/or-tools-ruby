@@ -356,6 +356,11 @@ void init_constraint(Rice::Module& m) {
         std::string proto_string;
         google::protobuf::TextFormat::PrintToString(self.Proto(), &proto_string);
         return proto_string;
+      })
+    .define_method(
+      "export_to_file",
+      [](CpModelBuilder& self, const std::string& filename) {
+        self.export_to_file(filename)
       });
 
   Rice::define_class_under<CpSolverResponse>(m, "CpSolverResponse")
