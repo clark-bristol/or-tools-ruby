@@ -360,7 +360,7 @@ void init_constraint(Rice::Module& m) {
     .define_method(
       "export_to_file",
       [](CpModelBuilder& self, const std::string& filename) {
-        self.export_to_file(filename)
+        self.ExportToFile(filename)
       });
 
   Rice::define_class_under<CpSolverResponse>(m, "CpSolverResponse")
